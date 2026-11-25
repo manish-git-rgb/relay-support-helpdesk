@@ -1,0 +1,21 @@
+services:
+  - type: web
+    runtime: node
+    name: relay-support-helpdesk
+    plan: free
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
+      - key: TRUST_PROXY
+        value: "1"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: relay-support-db
+          property: connectionString
+databases:
+  - name: relay-support-db
+    plan: free
+    ipAllowList: []
