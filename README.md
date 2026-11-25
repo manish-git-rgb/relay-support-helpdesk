@@ -68,4 +68,4 @@ See [API documentation](API.md) for request examples, response shapes, and error
 
 Push this directory as the root of a standalone GitHub repository. In Render, create a Blueprint from that repository using the included `render.yaml`. It provisions a Node web service and PostgreSQL and generates the JWT signing secret. The API serves the built React app on the same origin. Check `/api/health` and open the service URL to exercise registration, then promote a registered account with the admin command using a trusted connection to the deployed database. The Blueprint restricts external database connections by default. [Render Blueprint documentation](https://render.com/docs/blueprint-spec)
 
-Submission links are pending GitHub publication and a successful deployment.
+**Live demo** [Relay Helpdesk](https://relay-support-helpdesk.onrender.com/)
